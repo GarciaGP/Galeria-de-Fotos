@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+
+    <ImageView
+        android:id="@+id/imgGaleria01"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/p0"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prox"
+        android:onClick="proximaFoto"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/purple_700"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Anterior"
+        android:onClick="fotoAnterior"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/purple_700"/>
+
+
+</LinearLayout>

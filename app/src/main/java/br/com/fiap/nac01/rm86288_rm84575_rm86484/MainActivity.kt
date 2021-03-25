@@ -4,13 +4,15 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var imgDisplay : ImageView
-    var posicao = 0
+    lateinit var imgDisplay: ImageView
+    private var posicao = 0
 
-    val imgs = intArrayOf(
+    private val imgs = intArrayOf(
             R.drawable.p0,
             R.drawable.p1,
             R.drawable.p2,
@@ -28,21 +30,42 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun proximaFoto(view: View) {
+    fun navegar(view: View) {
+        try {
 
-        var img = imgDisplay.resources.
+            validar(view);
 
-        val aa = view.img
+            when (view.id) {
+                R.id.btnProx -> posicao++
+                R.id.btnVoltar -> posicao--
+            }
 
-        img.id;
+            imgDisplay.setImageResource(imgs[posicao])
 
-        imgDisplay.setImageResource(imgs[posicao])
+            Toast.makeText(this,
+                    "Imagem: ${posicao + 1}",
+                    Toast.LENGTH_SHORT
+            ).show()
+
+
+        } catch (e: Exception) {
+            Toast.makeText(this,
+                    e.message,
+                    Toast.LENGTH_SHORT
+            ).show()
+        }
+
     }
 
-    fun fotoAnterior(view: View) {
-
-        posicao = posicao - 1
-        imgDisplay.setImageResource(imgs[posicao])
+    fun validar(view: View) {
+        if (view.id == R.id.btnProx) {
+            if (posicao == imgs.size -1)
+                throw Exception("Não há mais imagens para exibir")
+        } else {
+            if (posicao == 0) {
+                throw Exception("Não há imagens antes dessa!")
+            }
+        }
     }
 
 }

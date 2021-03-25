@@ -1,42 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:background="#000000"
     android:gravity="center_horizontal"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
     <ImageView
         android:id="@+id/imgGaleria01"
-        android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/p0"
-        android:layout_marginBottom="8dp"/>
-
-    <Button
-        android:id="@+id/btnProx"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Prox"
-        android:onClick="navegar"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/purple_700"/>
-
-    <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Anterior"
-        android:onClick="navegar"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/purple_700"/>
-
+        android:layout_marginBottom="8dp"
+        android:layout_width="300dp"
+        android:src="@drawable/p0" />
     <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        >
+        <Button
+            android:id="@+id/btnVoltar"
+            android:background="#D10448"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:onClick="navegar"
+            android:layout_margin="10dp"
+            android:text="@string/prev"
+            android:textSize="50dp"
+            android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/btnProx"
+            android:background="#D10448"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:onClick="navegar"
+            android:layout_margin="10dp"
+            android:text="@string/next"
+            android:textSize="50dp"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
-
 </LinearLayout>
